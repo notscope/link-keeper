@@ -74,9 +74,7 @@ function PinnedLinkList() {
                                     <p className="text-2xl font-bold">Pinned</p>
                                     <p className="text-sm text-gray-500">Your pinned Links</p>
                                 </div>
-                            </div>
-                        
-                            {/* <!-- View All Button --> */}
+                            </div>                        
                         </div>
                         
                     
@@ -95,7 +93,6 @@ function PinnedLinkList() {
                     </div> 
                 </main>
             </div>
-            {/* Sidebar */}
             <Sidebar />
         </div>
     )

@@ -1,11 +1,9 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import api from "../api";
 
 function NewCollectionModal({ onCollectionCreated }) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("")
-
 
     const handleFormSubmit = (e) => {
         e.preventDefault();

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import api from "../api";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import Link from "../components/LinkItem";
+import LinkItem from "../components/LinkItem";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faChevronRight, faCircleInfo, faClock, faFolder, faHomeAlt, faHouse, faLink, faPlus, faThumbTack, faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -70,15 +70,13 @@ function CollectionDetail() {
                                     <p className="text-sm text-gray-500">{description}</p>
                                 </div>
                             </div>
-                        
-                            {/* <!-- View All Button --> */}
                         </div>
                         
                     
                         {/* <!-- Grid --> */}
                         {links && links.length > 0 ? (
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                                {links.map(link => <Link link={link} onDelete={deleteLink} key={link.id} />)}
+                                {links.map(link => <LinkItem link={link} onDelete={deleteLink} key={link.id} />)}
                             </div>
                             ) : (
                             <div className="flex flex-col items-center justify-center">
@@ -93,19 +91,6 @@ function CollectionDetail() {
             {/* Sidebar */}
             <Sidebar />
         </div>
-        // <div className="container-fluid">
-        //     <Navbar />
-        //     <div>
-        //         <h2>Collection {id} - {title}</h2>
-        //         <p>{description}</p>
-        //         {/* Ensure links array is defined and has items */}
-        //         {links && links.length > 0 ? (
-        //             links.map(link => <Link link={link} onDelete={deleteLink} key={link.id} />)
-        //         ) : (
-        //             <p>Empty</p>
-        //         )}
-        //     </div>
-        // </div>
     );
 }
 

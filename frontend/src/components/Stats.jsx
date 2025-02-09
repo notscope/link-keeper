@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faClock, faFolder, faHomeAlt, faHouse, faLink, faPlus, faThumbTack } from "@fortawesome/free-solid-svg-icons";
+import { faFolder, faLink, faThumbTack } from "@fortawesome/free-solid-svg-icons";
 
 
 function Stats({ stats }) {

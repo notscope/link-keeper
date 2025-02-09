@@ -2,7 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faCircleInfo, faClock, faFolder, faHomeAlt, faHouse, faLink, faPlus, faThumbTack } from "@fortawesome/free-solid-svg-icons";
+import { faFolder, faHomeAlt, faLink, faThumbTack } from "@fortawesome/free-solid-svg-icons";
 
 function Sidebar() {
     const location = useLocation();

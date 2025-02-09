@@ -1,11 +1,10 @@
 import NewLinkModal from "./NewLinkModal"
 import NewCollectionModal from "./NewCollectionModal"
-import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import api from "../api";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faCircleInfo, faClock, faFolder, faHomeAlt, faHouse, faLink, faPlus, faThumbTack } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar({ onLinkCreated, onCollectionCreated }) {
     const [currentUser, setCurrentUser] = useState([]);

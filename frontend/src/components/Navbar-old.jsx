@@ -1,6 +1,6 @@
 import NewLinkModal from "./NewLinkModal"
 import NewCollectionModal from "./NewCollectionModal"
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import api from "../api";
 

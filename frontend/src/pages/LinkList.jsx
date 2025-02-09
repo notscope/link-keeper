@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "../api";
-import Link from "../components/LinkItem";
+import LinkItem from "../components/LinkItem";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 
@@ -71,15 +71,13 @@ function LinkList() {
                                     <p className="text-sm text-gray-500">Links from every Collection</p>
                                 </div>
                             </div>
-                        
-                            {/* <!-- View All Button --> */}
                         </div>
                         
                     
                         {/* <!-- Grid --> */}
                         {links && links.length > 0 ? (
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                                {links.map(link => <Link link={link} onDelete={deleteLink} key={link.id} />)}
+                                {links.map(link => <LinkItem link={link} onDelete={deleteLink} key={link.id} />)}
                             </div>
                             ) : (
                             <div className="flex flex-col items-center justify-center">
@@ -94,20 +92,6 @@ function LinkList() {
             {/* Sidebar */}
             <Sidebar />
         </div>
-
-
-        
-        // <div className="container-fluid">
-        //     <div className="row">
-        //         <Sidebar />
-        //         <div className="col p-0">
-        //             <Navbar onLinkCreated={handleLinkCreated} />
-        //             <h2>Linksasdsda</h2>
-        //             {links.map(link => <Link link={link} onDelete={deleteLink} key={link.id} />)}
-        //         </div>
-        //     </div>
-        // </div>
-    
     )
 }
 

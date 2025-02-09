@@ -50,7 +50,6 @@ function Form({ route, method }) {
                         </div>
                     )}
                 </div>
-
                 <div className="space-y-4">
                     <div className="flex items-center bg-gray-700 p-2 rounded-md pl-4 focus-within:ring-2 focus-within:ring-blue-400">
                         <FontAwesomeIcon icon={faUser} className="text-gray-400 mr-2" />
@@ -73,31 +72,6 @@ function Form({ route, method }) {
                 )}
             </form>
         </div>
-        // <div className="container mt-4 border">
-        //     <form onSubmit={handleSubmit}>
-        //         <h1>{name}</h1>
-        //         <div className="mb-3">
-        //             <label className="form-label">User Name</label>
-        //             <input
-        //                 className="form-control"
-        //                 type="text"
-        //                 value={username}
-        //                 onChange={(e) => setUsername(e.target.value)}
-        //             />
-        //         </div>
-        //         <div className="mb-3">
-        //             <label className="form-label">Password</label>
-        //             <input
-        //                 className="form-control"
-        //                 type="password"
-        //                 value={password}
-        //                 onChange={(e) => setPassword(e.target.value)}
-        //             />
-        //         </div>
-        //         <button className="btn btn-primary" type="submit">{name}</button>
-        //     </form>
-        // </div>
-
     )
 }
 

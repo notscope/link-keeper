@@ -60,8 +60,6 @@ function CollectionList() {
                                     <p className="text-sm text-gray-500">Collections you own</p>
                                 </div>
                             </div>
-                        
-                            {/* <!-- View All Button --> */}
                         </div>
                         
                     
@@ -75,65 +73,8 @@ function CollectionList() {
             {/* Sidebar */}
             <Sidebar />
         </div>
-        // <div className="container-fluid">
-        //     <div className="row">
-        //         <Sidebar />
-        //         <div className="col p-0">
-        //             <Navbar onCollectionCreated={handleCollectionCreated} />
-        //             <div className="container-fluid mt-2">
-        //                 <h2>All Collections</h2>
-        //                 {collections.map(collection => <Collection collection={collection} onDelete={deleteCollection} key={collection.id} />)}
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
     )
 
 }
 
 export default CollectionList
-
-    // const [title, setTitle] = useState("");
-    // const [description, setDescription] = useState("")
-
-
-    // const createCollection = (e) => {
-    //     e.preventDefault()
-    //     api.post("/api/collections/", { title, description }).then((res) => {
-    //         if (res.status === 201) alert("Collection Created")
-    //         else alert("Failed to create collection")
-    //         getCollections()
-    //     }).catch((error) => alert(error))
-
-    // }
-
-{/* <div>
-<h2>Create New Collection</h2>
-<form onSubmit={createCollection}>
-    <div className="mb-3">
-        <label htmlFor="title" className="form-label">Title</label>
-        <input 
-            type="text"
-            className="form-control" 
-            id="title"
-            name="title"
-            required
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
-        />
-    </div>
-    <div className="mb-3">
-        <label htmlFor="description" className="form-label">Description</label>
-        <input 
-            type="text"
-            className="form-control" 
-            id="description"
-            name="description"
-            required
-            onChange={(e) => setDescription(e.target.value)}
-            value={description}
-        />
-    </div>
-    <input className="btn btn-primary" type="submit" value="Submit"></input>            
-</form>
-</div> */}
