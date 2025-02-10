@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckCircle, faEnvelope, faLock, faSignInAlt, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCheckCircle, faEnvelope, faEye, faEyeSlash, faLock, faSignInAlt, faUser } from "@fortawesome/free-solid-svg-icons";
 
 function Form({ route, method }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
@@ -38,7 +39,7 @@ function Form({ route, method }) {
         <div className="flex items-center justify-center min-h-screen bg-gray-900 p-4">
             <form onSubmit={handleSubmit} className="w-full max-w-md shadow-2xl bg-gray-800 p-6 rounded-2xl text-white">
                 <div className="text-center">
-                    {name == "Login" ? (
+                    {name === "Login" ? (
                         <div>
                             <h2 className="text-2xl font-bold mb-4">Welcome Back!</h2>
                             <p className="mb-6 text-gray-400">Sign in to continue</p>
@@ -53,21 +54,43 @@ function Form({ route, method }) {
                 <div className="space-y-4">
                     <div className="flex items-center bg-gray-700 p-2 rounded-md pl-4 focus-within:ring-2 focus-within:ring-blue-400">
                         <FontAwesomeIcon icon={faUser} className="text-gray-400 mr-2" />
-                        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} className="input input-bordered w-full bg-transparent text-white border-none pl-2 focus:outline-none" />
+                        <input 
+                            type="text" 
+                            placeholder="Username" 
+                            value={username} 
+                            onChange={(e) => setUsername(e.target.value)} 
+                            className="input input-bordered w-full bg-transparent text-white border-none pl-2 focus:outline-none" 
+                        />
                     </div>
                     <div className="flex items-center bg-gray-700 p-2 rounded-md relative pl-4 focus-within:ring-2 focus-within:ring-blue-400">
                         <FontAwesomeIcon icon={faLock} className="text-gray-400 mr-2" />
-                        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="input input-bordered w-full bg-transparent text-white border-none pl-2 pr-10 focus:outline-none" />
+                        <input 
+                            type={showPassword ? "text" : "password"} 
+                            placeholder="Password" 
+                            value={password} 
+                            onChange={(e) => setPassword(e.target.value)} 
+                            className="input input-bordered w-full bg-transparent text-white border-none pl-2 pr-10 focus:outline-none" 
+                        />
+                        <button 
+                            type="button" 
+                            className="absolute right-3 text-gray-400" 
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+                            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                        </button>
                     </div>
-                    <button className="btn btn-primary w-full" type="submit"><FontAwesomeIcon icon={faSignInAlt} className="mr-2"></FontAwesomeIcon>{name}</button>
+                    <button className="btn btn-primary w-full" type="submit">
+                        <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
+                        {name}
+                    </button>
                 </div>
-                {name == "Login" ? (
+                {name === "Login" ? (
                     <p className="text-center text-sm text-gray-400 mt-4">
                         Don't have an account? <a href="/register" className="text-blue-400 hover:underline">Sign up</a>
                     </p>
                 ) : (
                     <p className="text-center text-sm text-gray-400 mt-4">
-                    Already have an account? <a href="/login" className="text-blue-400 hover:underline">Login</a>
+                        Already have an account? <a href="/login" className="text-blue-400 hover:underline">Login</a>
                     </p>
                 )}
             </form>
@@ -75,4 +98,4 @@ function Form({ route, method }) {
     )
 }
 
-export default Form
+export default Form;
