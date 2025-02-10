@@ -75,7 +75,7 @@ function NewCollectionModal({ onCollectionCreated }) {
                     <div className="label">
                         <span className="label-text">Description</span>
                     </div>
-                    <textarea id="description" name="description" required onChange={(e) => setDescription(e.target.value)} value={description} className="textarea textarea-bordered h-24 resize-none" placeholder="The purpose of this Collection..."></textarea>
+                    <textarea id="description" name="description" onChange={(e) => setDescription(e.target.value)} value={description} className="textarea textarea-bordered h-24 resize-none" placeholder="The purpose of this Collection..."></textarea>
                     </label>
                 </form>
                 <div className="modal-action">
