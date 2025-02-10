@@ -66,7 +66,7 @@ function Home() {
     }
 
     const deleteLink = (id) => {
-        api.delete(`/api/links/delete/${id}/`).then((res) => {
+        api.delete(`/api/links/${id}/delete/`).then((res) => {
             if (res.status === 204) {
                 showToast("Link Deleted", "success");
             } else  {

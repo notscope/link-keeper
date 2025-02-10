@@ -111,7 +111,14 @@ class LinkDelete(generics.DestroyAPIView):
     def get_queryset(self):
         user = self.request.user
         return Link.objects.filter(author=user)
+    
+class LinkUpdate(generics.UpdateAPIView):
+    serializer_class = LinkSerializer
+    permission_classes = [IsAuthenticated]
 
+    def get_queryset(self):
+        user = self.request.user
+        return Link.objects.filter(author=user)
 
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()

@@ -30,7 +30,7 @@ function CollectionList() {
     };
 
     const deleteCollection = (id) => {
-        api.delete(`/api/collections/delete/${id}/`).then((res) => {
+        api.delete(`/api/collections/${id}/delete/`).then((res) => {
             if (res.status === 204) alert("Collection Deleted")
             else alert("Failed to delete collection")
             getCollections()

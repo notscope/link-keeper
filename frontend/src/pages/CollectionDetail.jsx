@@ -32,7 +32,7 @@ function CollectionDetail() {
     };
 
     const deleteLink = (id) => {
-        api.delete(`/api/links/delete/${id}/`).then((res) => {
+        api.delete(`/api/links/${id}/delete/`).then((res) => {
             if (res.status === 204) alert("Link Deleted")
             else alert("Failed to delete links")
             getLinks()
