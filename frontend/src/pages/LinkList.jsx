@@ -80,7 +80,7 @@ function LinkList() {
                                 {links.map(link => <LinkItem link={link} onDelete={deleteLink} key={link.id} />)}
                             </div>
                             ) : (
-                            <div className="flex flex-col items-center justify-center">
+                            <div className="flex flex-col items-center justify-cente text-center">
                                 <FontAwesomeIcon icon={faLink} className="text-9xl mb-2" />
                                 <h2 className="text-2xl">You Haven't Created Any Links Yet</h2>
                                 <p className="">Start your journey by creating a new Link!</p>

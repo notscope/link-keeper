@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import api from "../api";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faBars } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function Navbar({ onLinkCreated, onCollectionCreated }) {
     const [currentUser, setCurrentUser] = useState([]);
@@ -28,15 +29,13 @@ function Navbar({ onLinkCreated, onCollectionCreated }) {
             <div className="navbar-start">
                 <div className="md:hidden">
                     <label htmlFor="drawer-toggle" className="btn btn-squre btn-ghost" aria-label="Open sidebar">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" />
-                        </svg>
+                        <FontAwesomeIcon icon={faBars} />
                     </label>
                 </div>
 
                 {/* Logo */}
                 <div className="">
-                    <a className="btn btn-ghost text-xl">MyApp</a>
+                    <Link to="/" className="btn btn-ghost text-xl">MyApp</Link>
                 </div>
             </div>
 

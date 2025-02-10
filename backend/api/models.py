@@ -5,7 +5,7 @@ from django.dispatch import receiver
 
 # Create your models here.
 class Collection(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=128)
     description = models.TextField(blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="collections")
@@ -17,9 +17,9 @@ class Collection(models.Model):
         return self.count()
 
 class Link(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=256)
     url = models.TextField()
-    description = models.TextField()
+    description = models.TextField(blank=True)
     pinned = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="links")

@@ -10,6 +10,8 @@ function NewCollectionModal({ onCollectionCreated }) {
         createCollection();
         const dialog = document.getElementById('NewCollectionModal');
         dialog.close();
+        setTitle("");
+        setDescription("");
     }
 
     const handleClose = () => {

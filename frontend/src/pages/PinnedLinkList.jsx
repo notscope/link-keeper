@@ -84,7 +84,7 @@ function PinnedLinkList() {
                                 {pinnedLinks.map(link => <LinkItem link={link} onDelete={deleteLink} onPin={pinLink} key={link.id} />)}
                             </div>
                             ) : (
-                            <div className="flex flex-col items-center justify-center">
+                            <div className="flex flex-col items-center justify-center text-center">
                                 <FontAwesomeIcon icon={faThumbTack} className="text-9xl mb-2" />
                                 <h2 className="text-2xl">Pin Your Favorite Links Here!</h2>
                                 <p className="">You can Pin your favorite Links by clicking on the three dots on each Link and clicking Pin to Dashboard.</p>

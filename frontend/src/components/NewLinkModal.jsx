@@ -43,6 +43,10 @@ function NewLinkModal({ onLinkCreated }) {
         createLink();
         const dialog = document.getElementById('NewLinkModal');
         dialog.close();
+        setLinkURLs("");
+        setTitle("");
+        setDescription("");
+        setSelectedCollection("");
     };
 
     const handleClose = () => {
@@ -51,6 +55,7 @@ function NewLinkModal({ onLinkCreated }) {
         setLinkURLs("");
         setTitle("");
         setDescription("");
+        setSelectedCollection("");
     }
 
     useEffect(() => {
@@ -74,18 +79,18 @@ function NewLinkModal({ onLinkCreated }) {
                 <form id="newLinkForm" onSubmit={handleFormSubmit} autoComplete="off">
                     <label className="form-control my-4 w-full">
                     <div className="label">
-                        <span className="label-text">Link</span>
-                    </div>
-                    <input type="text" placeholder="e.g http://example.com/" id="link-url" name="link-url" required onChange={(e) => setLinkURLs(e.target.value)} value={linkURLs} className="input input-bordered w-full" />
-                    <div className="label">
                         <span className="label-text">Title</span>
                     </div>
                     <input type="text" id="title" name="title" required onChange={(e) => setTitle(e.target.value)} value={title} placeholder="Type here" className="input input-bordered w-full" />
+                    <div className="label">
+                        <span className="label-text">Link</span>
+                    </div>
+                    <input type="text" placeholder="e.g http://example.com/" id="link-url" name="link-url" required onChange={(e) => setLinkURLs(e.target.value)} value={linkURLs} className="input input-bordered w-full" />
 
                     <div className="label">
                         <span className="label-text">Description</span>
                     </div>
-                    <textarea className="textarea textarea-bordered h-24 resize-none" id="description" name="description" required onChange={(e) => setDescription(e.target.value)} value={description} placeholder="Notes, thoughts, etc."></textarea>
+                    <textarea className="textarea textarea-bordered h-24 resize-none" id="description" name="description" onChange={(e) => setDescription(e.target.value)} value={description} placeholder="Notes, thoughts, etc."></textarea>
 
                     <div className="label">
                         <span className="label-text">Collection</span>
