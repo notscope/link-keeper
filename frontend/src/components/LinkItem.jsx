@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faFolder, faLink, faPen, faPencil, faThumbTack, faThumbtackSlash, faTrash } from "@fortawesome/free-solid-svg-icons";
 import EditLinkModal from "./EditLinkModal";
+import LinkModal from "./LinkModal"
 
 function LinkItem({link, onDelete, onPin}) {
     const [selectedLink, setSelectedLink] = useState(null);
@@ -35,7 +36,7 @@ function LinkItem({link, onDelete, onPin}) {
                     <div className="flex gap-2">
                         <button onClick={() => onDelete(link.id)} className="btn btn-error btn-sm"><FontAwesomeIcon icon={faTrash} /></button>
                         <button onClick={handleEditClick} className="btn btn-primary btn-sm"><FontAwesomeIcon icon={faPen} /></button>
-                        <EditLinkModal link={selectedLink} onLinkUpdated={handleLinkUpdate} />
+                        <LinkModal link={selectedLink} onLinkUpdated={handleLinkUpdate} method={"update"} />
                         {currentLink.pinned ? (
                             <button onClick={() => onPin(link.id)} className="btn btn-primary btn-sm"><FontAwesomeIcon icon={faThumbtackSlash} /></button>
                         ) : (

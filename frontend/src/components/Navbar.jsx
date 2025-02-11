@@ -1,4 +1,5 @@
 import NewLinkModal from "./NewLinkModal"
+import LinkModal from "./LinkModal";
 import NewCollectionModal from "./NewCollectionModal"
 import { useState, useEffect } from "react";
 import api from "../api";
@@ -44,7 +45,7 @@ function Navbar({ onLinkCreated, onCollectionCreated }) {
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1">
                         <li className="font-bold"><a onClick={()=>document.getElementById('NewLinkModal').showModal()}><FontAwesomeIcon icon={faPlus} />Link</a></li>
-                        <NewLinkModal onLinkCreated={onLinkCreated} />
+                        <LinkModal onLinkCreated={onLinkCreated} method={"create"} />
                         <li className="font-bold"><a onClick={()=>document.getElementById('NewCollectionModal').showModal()}><FontAwesomeIcon icon={faPlus} />Collection</a></li>
                         <NewCollectionModal onCollectionCreated={onCollectionCreated} />
                     </ul>
