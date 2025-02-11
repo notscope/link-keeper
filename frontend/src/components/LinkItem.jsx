@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faFolder, faLink, faPen, faPencil, faThumbTack, faThumbtackSlash, faTrash } from "@fortawesome/free-solid-svg-icons";
-import EditLinkModal from "./EditLinkModal";
 import LinkModal from "./LinkModal"
 
 function LinkItem({link, onDelete, onPin}) {

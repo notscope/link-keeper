@@ -60,6 +60,14 @@ class CollectionDelete(generics.DestroyAPIView):
     def get_queryset(self):
         user = self.request.user
         return Collection.objects.filter(author=user)
+    
+class CollectionUpdate(generics.UpdateAPIView):
+    serializer_class = CollectionSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        return Collection.objects.filter(author=user)
 
 class LinkListCreate(generics.ListCreateAPIView):
     serializer_class = LinkSerializer

@@ -107,19 +107,6 @@ function LinkModal({ onLinkCreated, onLinkUpdated, link, method }) {
 
     useEffect(() => {
         // Attach event listener to reset form on modal hide
-        const modalElement = document.getElementById("EditLinkModal");
-        const handleHidden = () => resetForm();
-
-        modalElement.addEventListener("hidden.bs.modal", handleHidden);
-
-        // Cleanup event listener on component unmount
-        return () => {
-            modalElement.removeEventListener("hidden.bs.modal", handleHidden);
-        };
-    }, []);
-
-    useEffect(() => {
-        // Attach event listener to reset form on modal hide
         const modalElement = document.getElementById("NewLinkModal");
         const handleHidden = () => resetForm();
 
